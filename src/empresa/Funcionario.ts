@@ -23,8 +23,9 @@ export abstract class Funcionario {
     return this.beneficios;
   }
 
-  public getSalarioBruto(): number {
+  protected getSalarioBruto(): number {
     return this.salario;
   }
+
   public abstract getSalarioLiguido(): number;
 }
