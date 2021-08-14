@@ -1,4 +1,9 @@
 # typescript-orientado-objetos-starter
 
+## Rodar o projeto
 
-- Exemplo de projeto: [https://github.com/ifpi-picos/orientacao-objetos-typescript](https://github.com/ifpi-picos/orientacao-objetos-typescript)
+- `npm start`, irá compilar os arquivos Typescrypt e irá rodar os que estão no dist.
+
+## Testes
+
+- `npm run test`
