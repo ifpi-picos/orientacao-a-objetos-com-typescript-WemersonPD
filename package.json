@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "transpile": "npx tsc",
+    "start": "npm run transpile && node dist/App.js"
   },
   "author": "",
   "license": "ISC",
