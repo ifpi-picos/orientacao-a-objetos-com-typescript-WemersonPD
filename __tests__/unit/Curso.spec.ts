@@ -34,12 +34,22 @@ describe("Curso", () => {
     const web2 = new Disciplina("Web2 back-end", jesiel);
     const mobile = new Disciplina("Mobile", welligton);
 
-    const curso = new Curso("Web moderno");
-    curso.addDisciplina(web1);
-    curso.addDisciplina(web2);
-    curso.addDisciplina(mobile);
+    const curso = new Curso("Web moderno", [web1, web2, mobile]);
 
     expect(curso.getDisciplinas().length).toBeGreaterThan(2);
+    expect(curso.getDisciplinas()).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          nome: "Web1 front-end",
+        }),
+        expect.objectContaining({
+          nome: "Web2 back-end",
+        }),
+        expect.objectContaining({
+          nome: "Mobile",
+        }),
+      ])
+    );
   });
 
   it("deve remover disciplina quando nenhuma foi adiconada ainda", () => {
@@ -73,10 +83,7 @@ describe("Curso", () => {
     const web2 = new Disciplina("Web2 back-end", jesiel);
     const mobile = new Disciplina("Mobile", welligton);
 
-    const curso = new Curso("Web moderno");
-    curso.addDisciplina(web1);
-    curso.addDisciplina(web2);
-    curso.addDisciplina(mobile);
+    const curso = new Curso("Web moderno", [web1, web2, mobile]);
 
     expect(curso.removeDisciplina(web2)).toBeTruthy();
     expect(curso.getDisciplinas()).toEqual(

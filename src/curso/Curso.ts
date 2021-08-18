@@ -4,8 +4,9 @@ export class Curso {
   private nome: String;
   private disciplinas: Disciplina[] = [];
 
-  constructor(nome: String) {
+  constructor(nome: String, disciplinas: Disciplina[] = []) {
     this.nome = nome;
+    this.disciplinas = disciplinas;
   }
 
   public getNome(): String {
