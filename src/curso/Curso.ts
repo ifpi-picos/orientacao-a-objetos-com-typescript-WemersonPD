@@ -2,11 +2,10 @@ import { Disciplina } from "./Disciplina";
 
 export class Curso {
   private nome: String;
-  private disciplinas: Disciplina[];
+  private disciplinas: Disciplina[] = [];
 
-  constructor(nome: String, disciplinas: Disciplina[]) {
+  constructor(nome: String) {
     this.nome = nome;
-    this.disciplinas = disciplinas;
   }
 
   public getNome(): String {
@@ -23,5 +22,17 @@ export class Curso {
 
   public addDisciplina(disciplina: Disciplina): void {
     this.disciplinas.push(disciplina);
+  }
+
+  public removeDisciplina(disciplina: Disciplina): Boolean {
+    const disciplinaIndex = this.disciplinas.indexOf(disciplina);
+
+    switch (disciplinaIndex) {
+      case -1:
+        return false;
+      default:
+        this.disciplinas.splice(disciplinaIndex, 1);
+        return true;
+    }
   }
 }

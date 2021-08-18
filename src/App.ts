@@ -13,8 +13,9 @@ const web2 = new Disciplina("Web2 back-end", jesiel);
 const welligton = new Professor("Welligton");
 const mobile = new Disciplina("Mobile", welligton);
 
-const curso = new Curso("web", [web1, web2]);
-
+const curso = new Curso("web");
+curso.addDisciplina(web1);
+curso.addDisciplina(web2);
 curso.addDisciplina(mobile);
 
 console.log("Curso", curso);
